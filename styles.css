@@ -161,7 +161,7 @@ section{ padding-block: var(--section-y); position: relative; }
   border-color: var(--border-soft);
 }
 .nav .wrap{ display:flex; align-items:center; justify-content:space-between; gap: 24px; }
-.logo{ font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: 0.02em; }
+.logo{ font-family: var(--display); font-weight: 900; font-size: 30px; letter-spacing: 0.02em; }
 .logo .dot{ color: var(--accent); }
 
 .nav-links{ display:flex; align-items:center; gap: 30px; }

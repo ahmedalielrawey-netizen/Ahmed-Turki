@@ -565,3 +565,34 @@ footer{ padding-block: 56px; border-top: 1px solid var(--border-soft); }
   display:inline-block; font-size:12.5px; color: var(--text-faint);
   border:1px dashed var(--border); border-radius: 999px; padding: 6px 14px; margin-top: 16px;
 }
+
+/* ============================================================
+   SMALL-PHONE REFINEMENTS (≤480px)
+   Tightens spacing and stacks actions so nothing crowds or
+   overflows on narrow screens (iPhone SE and similar).
+   ============================================================ */
+@media (max-width: 480px){
+  :root{ --section-y: 56px; }
+  .wrap{ padding-inline: 16px; }
+
+  .hero{ padding-top: 108px; }
+  .hero-actions, .final-actions{ flex-direction: column; align-items: stretch; }
+  .hero-actions .btn, .final-actions .btn{ width: 100%; }
+  .hero-stat-card{ padding: 20px; }
+
+  .btn{ padding: 14px 22px; font-size: 14px; }
+
+  .service-grid, .client-grid, .project-grid, .testi-grid{ gap: 16px; }
+  .gallery-grid{ grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .mt-stats, .form-row{ grid-template-columns: 1fr 1fr; }
+
+  .final-cta{ padding: 44px 20px; }
+  .contact-channels{ gap: 10px; }
+  .channel{ padding: 13px 14px; }
+
+  .wa-float{ width: 50px; height: 50px; bottom: 18px; left: 18px; font-size: 18px; }
+
+  .foot-top{ flex-direction: column; gap: 26px; }
+  .foot-bottom{ flex-direction: column; align-items: flex-start; gap: 8px; }
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة التحول — Transformation Journey | [اسم المدرب]</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* page-specific additions for the journey template */
+  .journey-hero{ padding-top: 150px; padding-bottom: 40px; }
+  .back-link{ display:inline-flex; align-items:center; gap:8px; color: var(--text-muted); font-weight:600; font-size:14px; margin-bottom: 26px; }
+  .back-link:hover{ color: var(--accent); }
+  .profile-grid{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px;
+  }
+  .profile-field{ background: var(--bg-card); border:1px solid var(--border); border-radius: var(--radius-s); padding: 16px; }
+  .profile-field .k{ font-size:12px; color: var(--text-faint); margin-bottom:6px; }
+  .profile-field .v{ font-weight:700; font-size:15px; }
+  @media (max-width: 900px){ .profile-grid{ grid-template-columns: repeat(2,1fr); } }
+
+  .approach-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+  .approach-card{ background: var(--bg-card); border:1px solid var(--border); border-radius: var(--radius-m); padding: 28px; }
+  .approach-card .eyebrow{ margin-bottom: 12px; }
+  .approach-card p{ color: var(--text-muted); font-size:15px; margin:0; }
+  .approach-note{ font-size:12.5px; color: var(--text-faint); margin-top:14px; border-top:1px solid var(--border-soft); padding-top:14px; }
+  @media (max-width: 900px){ .approach-grid{ grid-template-columns: 1fr; } }
+
+  .timeline{ display:grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 40px; position:relative; }
+  .timeline::before{ content:''; position:absolute; top:20px; inset-inline:5%; height:1px; background: var(--border); }
+  .tl-step{ position:relative; text-align:center; }
+  .tl-dot{ width:40px; height:40px; margin-inline:auto 0; margin: 0 auto 16px; border-radius:50%; background: var(--bg); border:1px solid var(--accent); color:var(--accent); display:flex; align-items:center; justify-content:center; font-family: var(--display); font-weight:800; font-size:14px; position:relative; z-index:1; }
+  .tl-step h4{ font-family: var(--display); font-size:16px; margin-bottom:8px; }
+  .tl-step p{ color: var(--text-muted); font-size:13px; margin:0; }
+  @media (max-width: 900px){ .timeline{ grid-template-columns: 1fr; } .timeline::before{ inset-inline:20px; top:0; bottom:0; height:auto; width:1px; } }
+
+  .changes-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 30px; }
+  .change-card{ background: var(--bg-card); border:1px solid var(--border); border-radius: var(--radius-s); padding: 20px; text-align:center; }
+  .change-card .en-line{ font-size:11px; color: var(--text-faint); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; }
+  .change-card h4{ font-size:15px; margin: 8px 0 0; }
+  @media (max-width: 900px){ .changes-grid{ grid-template-columns: repeat(2,1fr); } }
+
+  .disclaimer{
+    margin-top: 40px; border: 1px dashed var(--border); border-radius: var(--radius-m);
+    padding: 20px 24px; color: var(--text-muted); font-size: 14px; background: var(--bg-elevated);
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="mainNav">
+  <div class="wrap">
+    <a href="index.html" class="logo">[اسم المدرب]<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html#home">الرئيسية</a>
+      <a href="index.html#story">قصتي</a>
+      <a href="index.html#services">الخدمات</a>
+      <a href="index.html#clients">تحولات العملاء</a>
+      <a href="index.html#project">مشروع التحول</a>
+      <a href="index.html#about">عني</a>
+      <a href="index.html#contact">تواصل معي</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html#contact" class="btn btn-ghost btn-sm">تواصل واتساب</a>
+      <a href="index.html#contact" class="btn btn-primary btn-sm">ابدأ رحلتك — Start Your Transformation</a>
+    </div>
+    <button class="nav-burger" id="burgerBtn" aria-label="فتح القائمة">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#home">الرئيسية</a>
+  <a href="index.html#story">قصتي</a>
+  <a href="index.html#services">الخدمات</a>
+  <a href="index.html#clients">تحولات العملاء</a>
+  <a href="index.html#project">مشروع التحول</a>
+  <a href="index.html#about">عني</a>
+  <a href="index.html#contact">تواصل معي</a>
+  <a href="index.html#contact" class="btn btn-primary">ابدأ رحلتك — Start Your Transformation</a>
+</div>
+
+<!-- ================= JOURNEY HERO ================= -->
+<header class="journey-hero wrap">
+  <a href="index.html#clients" class="back-link">→ العودة إلى تحولات العملاء</a>
+  <div class="eyebrow">رحلة التحول — Transformation Journey</div>
+  <h1 class="section-title">[اسم المشارك]</h1>
+  <p class="section-sub" style="margin-bottom:0">
+    <span class="term"><span class="en">Fat Loss</span><span class="sep">—</span><span class="ar">خسارة الدهون</span></span>
+    خلال <span class="term"><span class="en">12 Weeks</span><span class="sep">—</span><span class="ar">12 أسبوع</span></span>
+  </p>
+
+  <!-- PARTICIPANT PROFILE -->
+  <div class="profile-grid">
+    <div class="profile-field"><div class="k">الاسم — Name</div><div class="v">[الاسم]</div></div>
+    <div class="profile-field"><div class="k">العمر — Age</div><div class="v">[XX]</div></div>
+    <div class="profile-field"><div class="k">الطول — Height</div><div class="v">[XXX] سم</div></div>
+    <div class="profile-field"><div class="k">الوزن في البداية — Starting Weight</div><div class="v">[XX] كجم</div></div>
+    <div class="profile-field"><div class="k">الهدف — Goal</div><div class="v">[الهدف]</div></div>
+    <div class="profile-field"><div class="k">نمط الحياة — Lifestyle</div><div class="v">[نمط الحياة]</div></div>
+    <div class="profile-field"><div class="k">خبرة التدريب — Training Experience</div><div class="v">[المستوى]</div></div>
+    <div class="profile-field"><div class="k">المدة — Duration</div><div class="v">12 أسبوع — 12 Weeks</div></div>
+  </div>
+</header>
+
+<!-- ================= STARTING POINT ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">نقطة البداية — Starting Point</div>
+    <h2 class="section-title" style="margin-bottom:30px">صور البداية</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+      <div class="ph portrait"><span class="ph-tag">قبل — Before 01</span></div>
+      <div class="ph portrait"><span class="ph-tag">قبل — Before 02</span></div>
+      <div class="ph portrait"><span class="ph-tag">قبل — Before 03</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= THE PLAN ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">الخطة — The Plan</div>
+    <h2 class="section-title" style="margin-bottom:0">أسلوب العمل</h2>
+    <div class="approach-grid">
+      <div class="approach-card reveal">
+        <div class="eyebrow" style="margin-bottom:12px">أسلوب التدريب — Training Approach</div>
+        <p>[شرح لماذا تم اختيار هذا الأسلوب التدريبي بالتحديد لهذا المشارك، بناءً على هدفه ومستواه ونمط حياته.]</p>
+      </div>
+      <div class="approach-card reveal">
+        <div class="eyebrow" style="margin-bottom:12px">أسلوب التغذية — Nutrition Approach</div>
+        <p>[شرح عام للاستراتيجية الغذائية المتبعة خلال البرنامج، بما يتناسب مع هدف المشارك.]</p>
+        <div class="approach-note">لا يُعرض المدرب بصفته أخصائي تغذية أو طبيبًا مرخصًا ما لم تُذكر هذه الصفة صراحة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRESS TIMELINE ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">الخط الزمني للتقدم — Progress Timeline</div>
+    <h2 class="section-title" style="margin-bottom:0">من الأسبوع 0 إلى الأسبوع 12</h2>
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <div class="tl-dot">0</div>
+        <h4>الأسبوع 0</h4>
+        <p>صور البداية + القياسات</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">4</div>
+        <h4>الأسبوع 4</h4>
+        <p>صور + قياسات + تقدم التدريب</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">8</div>
+        <h4>الأسبوع 8</h4>
+        <p>صور + قياسات + تحديث التقدم</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">12</div>
+        <h4>الأسبوع 12</h4>
+        <p>الصور النهائية + القياسات النهائية</p>
+      </div>
+    </div>
+    <p class="placeholder-flag" style="margin-top:24px">* تُضاف الرسوم البيانية للتقدم عند توفر بيانات حقيقية.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= FINAL RESULT ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">النتيجة النهائية — Final Result</div>
+    <h2 class="section-title">قبل → بعد</h2>
+    <div class="ba-slider reveal" data-ba style="max-width:640px">
+      <div class="ba-pane ba-after"><div class="ph-tag" style="position:relative;z-index:1">بعد — After</div></div>
+      <div class="ba-clip" data-ba-clip><div class="ba-pane ba-before"><div class="ph-tag" style="position:relative;z-index:1">قبل — Before</div></div></div>
+      <span class="ba-badge before-badge">قبل — Before</span>
+      <span class="ba-badge after-badge">بعد — After</span>
+      <div class="ba-handle" data-ba-handle></div>
+      <div class="ba-caption"><div><div class="name">[اسم المشارك]</div><div class="meta">12 أسبوع — 12 Weeks</div></div></div>
+    </div>
+
+    <h3 style="margin-top:56px; font-size:24px;">ماذا تغير؟ — What Changed?</h3>
+    <div class="changes-grid">
+      <div class="change-card reveal"><span class="en-line">Physical Changes</span><h4>التغيرات الجسدية</h4></div>
+      <div class="change-card reveal"><span class="en-line">Strength</span><h4>القوة</h4></div>
+      <div class="change-card reveal"><span class="en-line">Consistency</span><h4>الاستمرارية</h4></div>
+      <div class="change-card reveal"><span class="en-line">Lifestyle</span><h4>نمط الحياة</h4></div>
+    </div>
+
+    <div class="approach-card reveal" style="margin-top:30px;">
+      <div class="eyebrow" style="margin-bottom:12px">شهادة المشارك — Testimonial</div>
+      <p>[تُضاف شهادة المشارك هنا فقط عند توفر شهادة حقيقية موثقة.]</p>
+    </div>
+
+    <div class="disclaimer">
+      النتائج تختلف من شخص لآخر. هذه الرحلة توثق تجربة شخص واحد ولا تمثل ضمانًا لنتائج مستقبلية.
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section>
+  <div class="wrap">
+    <div class="final-cta reveal">
+      <h2>عايز تبدأ رحلتك؟</h2>
+      <p>كل تحول بيبدأ بخطوة واحدة. ابدأ بتاعتك النهاردة.</p>
+      <div class="final-actions">
+        <a href="index.html#contact" class="btn btn-primary">ابدأ رحلتك — Start Your Transformation</a>
+        <a href="index.html#clients" class="btn btn-ghost">شاهد تحولات أخرى — View More Transformations</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="logo">[اسم المدرب]<span class="dot">.</span></div>
+        <div class="foot-tag">
+          <span class="eng">Personal Fitness Trainer</span> — مدرب لياقة بدنية<br>
+          "Train. Progress. Transform."
+          <span class="ar">"تدرب. تطور. تحوّل."</span>
+        </div>
+      </div>
+      <div class="foot-links">
+        <a href="index.html#home">الرئيسية</a>
+        <a href="index.html#story">قصتي</a>
+        <a href="index.html#services">الخدمات</a>
+        <a href="index.html#clients">تحولات العملاء</a>
+        <a href="index.html#project">مشروع التحول</a>
+        <a href="index.html#contact">تواصل معي</a>
+      </div>
+      <div class="foot-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="WhatsApp">WA</a>
+        <a href="#" aria-label="Facebook">FB</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 [اسم المدرب]. جميع الحقوق محفوظة.</span>
+      <span>Real People. Real Work. Real Progress. — أشخاص حقيقيون. مجهود حقيقي. تقدم حقيقي.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="index.html#contact" class="wa-float" aria-label="تواصل عبر واتساب">W</a>
+
+<script src="script.js"></script>
+</body>
+</html>
